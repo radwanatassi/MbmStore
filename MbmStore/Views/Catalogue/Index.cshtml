@@ -1,0 +1,143 @@
+﻿@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
+@{ ViewData["Title"] = "Catalogue";
+}
+
+<h2>Products</h2>
+<a asp-controller="Home" asp-action="Index">Home</a>
+
+<head>
+    <style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  margin: 20px;
+  text-align: left;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 18px;
+}
+</style>
+    </head>
+<div class="container">
+    <div class="row">
+
+        <div style="width: 400px; height:auto; float:left; margin:10px">
+            <h2>Books</h2>
+
+            @foreach (var b in @ViewBag.Books)
+            {
+        <div class="card">
+
+
+            <h3 style="text-align:center">@b.Title</h3>
+            <img src="/Images/@b.ImageFileName" alt=@b.Title style="width:300px;height:200px; vertical-align:central">
+            <br />
+            <b>Author: </b><label>@b.Author</label>
+            <br />
+            <b>Price: </b>
+            <label class="price">@b.Price</label>
+            <br />
+            <b>Publisher: </b>
+            <label>@b.Publisher</label>
+            <br />
+            <b>ISBN: </b>
+            <label>@b.ISBN</label>
+
+        </div>
+
+
+
+            }
+        </div>
+
+        </div>
+        </div>
+
+<div class="container">
+    <div class="row">
+        <div style="width: 600px; height:auto; float:left; margin:10px">
+
+            <h2> Music CDs</h2>
+
+            @foreach (var cd in ViewBag.Albums)
+            {
+        <div class="card">
+
+            <h3 style="text-align:center">@cd.Title</h3>
+            <img src="/Images/@cd.ImageFileName" alt=@cd.Title style="width:500px;height:200px; vertical-align:central">
+            <br />
+            <b>Author: </b><label>@cd.Artist</label>
+            <br />
+            <b>Price: </b>
+            <label class="price">@cd.Price</label>
+            <br />
+            <b>Released: </b>
+            <label>@cd.Released</label>
+            
+                    <h3 style="text-align:left">Tracks</h3>
+                    <ol>
+                        @foreach (var track in cd.Tracks)
+                        {
+                            <div style="float:left; width:600px; height:auto">
+                                <li style="float:left">
+                                    @track.Title
+                                    @track.Length.Minutes:@track.Length.Seconds
+
+                                </li>
+                            </div>
+
+                        }
+                        <b style="text-align:left">Total Playing Time:</b>
+                        <label style="text-align:left">@cd.GetPlayingTime()</label>
+
+                    </ol>
+                </div>
+            
+            }
+
+        </div>
+        </div>
+
+        
+            </div>
+
+<div class="container">
+    <div class="row">
+        <div style="width: 400px; height:auto; float:left; margin:10px">
+
+            <h2> Movies</h2>
+
+            @foreach (var m in @ViewBag.Movies)
+            {
+                <div class="card">
+
+                    <h3 style="text-align:center">@m.Title</h3>
+                    <img src="/Images/@m.ImageFileName" alt=@m.Title style="width:300px;height:200px; vertical-align:central">
+                    <br />
+                    <b>Director: </b><label>@m.Director</label>
+                    <br />
+                    <b>Price: </b>
+                    <label class="price">@m.Price</label>
+                    <br />
+                    <b>Released: </b>
+                    <label>@m.Released</label>
+
+      
+                </div>
+
+            }
+
+        </div>
+    </div>
+
+
+</div>
+     
+                    
+                    
+
+
+

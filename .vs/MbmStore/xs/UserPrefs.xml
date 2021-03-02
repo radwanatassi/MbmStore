@@ -1,0 +1,27 @@
+﻿<Properties StartupConfiguration="{9CF08F4B-1638-4C06-BDB1-6BBD799812A7}|Default">
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MbmStore" expanded="True">
+            <Node name="MbmStore" expanded="True">
+              <Node name="Infrastructure" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="../../../MbmStore/Models/Customer.cs" line="20" column="20" endLine="20" endColumn="23" offsetX="-1" offsetY="-1" expression="Age" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.MbmStore PreferredExecutionTarget="/Applications/Google Chrome.app" />
+</Properties>

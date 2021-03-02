@@ -1,0 +1,59 @@
+﻿@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
+
+@{ ViewData["Title"] = "Invoices";
+}
+
+<a asp-controller="Home" asp-action="Index">Home</a>
+
+<head>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<div class="container">
+<div class="row">
+
+    <div style="width: 1000px; height:auto; float:left; margin:10px">
+
+        <h2>Invoices</h2>
+
+        <table style="width:100%">
+            <tr>
+                <th width="100px">Invoice No.</th>
+                <th width="150px">Customer</th>
+                <th width="150">No Of Items</th>
+                <th width="400">Products</th>
+                <th width="100">Total</th>
+            </tr>
+
+            @foreach (var i in @ViewBag.Invoices)
+            { 
+
+        <tr>
+            <td width="100px">@i.InvoiceId</td>
+            <td width="200px">@i.Customer.FirstName @i.Customer.LastName</td>
+            <td width="100px">@i.OrderItems.Count</td>
+
+            <td width="500">
+                @foreach (var oi in @i.OrderItems)
+                {
+
+                    <li>
+                        @oi.Product.Title
+                    </li>
+                }
+                </td>
+                
+
+   
+                <td width="100">@i.TotalPrice</td>
+            </tr>
+
+            }
+            </table> 
+        </div>
+</div>
+</div>
