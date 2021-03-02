@@ -26,7 +26,9 @@
                 <th width="150px">Customer</th>
                 <th width="150">No Of Items</th>
                 <th width="400">Products</th>
+                <th width="100">Price</th>
                 <th width="100">Total</th>
+
             </tr>
 
             @foreach (var i in @ViewBag.Invoices)
@@ -44,13 +46,24 @@
                     <li>
                         @oi.Product.Title
                     </li>
-                }
-                </td>
-                
 
-   
-                <td width="100">@i.TotalPrice</td>
-            </tr>
+                }
+            </td>
+            <td width="100">
+                @foreach (var orderItem in @i.OrderItems)
+                {
+                    <label>
+                        @orderItem.TotalPrice
+                    </label>
+                }
+
+
+            <td width="100">@i.TotalPrice
+            </td>
+
+
+
+        </tr>
 
             }
             </table> 

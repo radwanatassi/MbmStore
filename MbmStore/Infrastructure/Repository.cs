@@ -11,10 +11,12 @@ namespace MbmStore.Infrastructure
 
         static Repository()
         {
-            // Book Objects
+            // Book Mockups Objects
             var book1 = new Book("Cal Newport", "Deep Work", 150.00m, "Improvement Zone");
             book1.ImageFileName = "Deep_Work.jpg";
             book1.ISBN = "978-0-349-41190-3";
+
+            // Add to the product list
             Products.Add(book1);
 
             var book2 = new Book("David Schwartz", "The Magic Of Thinking Big", 160.00m, "Vermillion");
@@ -27,7 +29,7 @@ namespace MbmStore.Infrastructure
             book3.ISBN = "978-0-06-231611-0";
             Products.Add(book3);
 
-            // MusicCD Objects
+            // MusicCD Mockups Objects
 
             var cd1 = new MusicCD("Ed Sheeran", "Delux", 128.00m, 2017);
             cd1.AddTrack(new Track("Eraser", new TimeSpan(0, 6, 40)));
@@ -61,7 +63,7 @@ namespace MbmStore.Infrastructure
             cd3.ImageFileName = "Kina.jpg";
             Products.Add(cd3);
 
-            // Movie Objects
+            // Movie Mockup Objects
             var movie1 = new Movie("Jungle Book", 160.50m, "junglebook.jpg", "Jon Favreu");
             Products.Add(movie1);
 
@@ -72,7 +74,7 @@ namespace MbmStore.Infrastructure
             Products.Add(movie3);
 
 
-            // Customers Mockup
+            // Customers Mockup Mockup
             Customer customer1 = new Customer(1,"Mike", "Larsen", "Skolegade 15", "8200", "Aarhus");
             customer1.AddPhone("42220327");
             customer1.SetBirthDate("01-02-1990");
@@ -102,6 +104,7 @@ namespace MbmStore.Infrastructure
             customer7.AddPhone("3201254");
             customer7.SetBirthDate("3-21-1975");
 
+            // Add to the Customers list
             Customers.Add(customer1);
             Customers.Add(customer2);
             Customers.Add(customer3);
@@ -110,19 +113,37 @@ namespace MbmStore.Infrastructure
             Customers.Add(customer6);
             Customers.Add(customer7);
 
+            // Invoices Mockups
 
             Invoice invoice1 = new Invoice(1, DateTime.Now, customer1);
             Invoice invoice2 = new Invoice(2, DateTime.Now, customer2);
             Invoice invoice3 = new Invoice(3, DateTime.Now, customer3);
             Invoice invoice4 = new Invoice(4, DateTime.Now, customer4);
 
+            customer1.AddInvoice(invoice1);
+            customer1.AddInvoice(invoice4);
+
+            customer2.AddInvoice(invoice2);
+            customer3.AddInvoice(invoice3);
+
+            // Add OrderItems to the invoice
             invoice1.AddOrderItem(movie1,1);
             invoice1.AddOrderItem(book2, 2);
-            invoice2.AddOrderItem(cd2, 2);
-            //invoice2.AddOrderItem(book2, 1);
 
+            invoice2.AddOrderItem(cd2, 2);
+            invoice2.AddOrderItem(book3, 1);
+
+            invoice3.AddOrderItem(movie2, 1);
+            invoice3.AddOrderItem(cd3, 1);
+
+            invoice4.AddOrderItem(movie3, 1);
+            invoice4.AddOrderItem(book1, 3);
+
+            // Add to Invoices list
             Invoices.Add(invoice1);
             Invoices.Add(invoice2);
+            Invoices.Add(invoice3);
+            Invoices.Add(invoice4);
 
 
 

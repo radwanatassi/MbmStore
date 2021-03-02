@@ -24,27 +24,39 @@
                         <th width="150px">First Name</th>
                         <th width="150px">Last Name</th>
                         <th width="90px">Age</th>
-                        <th width="200px">Phone No.</th>
+                        <th width="100px">Phone No.</th>
+                        <th width="200px">Invoices</th>
+
                         <th width="500px">Address</th>
                     </tr>
 
                     @foreach (var cus in ViewBag.Customers)
                     {
                 <tr>
-                    <td width="150px">@cus.FirstName</td>
-                    <td width="150px">@cus.LastName</td>
-                    <td width="90px">@cus.Age</td>
+                    <td align="center" width="150px">@cus.FirstName</td>
+                    <td align="center" width="150px">@cus.LastName</td>
+                    <td align="center" width="90px">@cus.Age</td>
 
-                    <td width="200">
+                    <td align="center" width="200">
                         @foreach (var p in @cus.PhoneNumbers)
                         {
 
-                            <li>
+                            <label>
                                 @p
-                            </li>
+                            </label><br />
                         }
                     </td>
-                    <td width="500">@cus.Address, @cus.Zip, @cus.City</td>
+
+                    <td align="center" width="200">
+                        @foreach (var invoice in @cus.Invoices)
+                        {
+
+                            <label>
+                                @invoice.TotalPrice
+                            </label><br />
+                        }
+                    </td>
+                    <td align="center" width="500">@cus.Address, @cus.Zip, @cus.City</td>
 
 
 

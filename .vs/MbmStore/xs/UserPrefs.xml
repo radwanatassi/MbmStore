@@ -1,17 +1,24 @@
-﻿<Properties StartupConfiguration="{9CF08F4B-1638-4C06-BDB1-6BBD799812A7}|Default">
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{9CF08F4B-1638-4C06-BDB1-6BBD799812A7}|Default">
   <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="MbmStore" expanded="True">
             <Node name="MbmStore" expanded="True">
+              <Node name="Controllers" expanded="True" />
               <Node name="Infrastructure" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Catalogue" expanded="True" />
+                <Node name="Customer" expanded="True" />
+                <Node name="Home" expanded="True">
+                  <Node name="Index.cshtml" selected="True" />
+                </Node>
+                <Node name="Movie" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
